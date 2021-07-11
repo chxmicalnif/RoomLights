@@ -13,6 +13,5 @@ For the sake of tidiness, I have separated the python functions which control th
 ### Operation
 
 The `lights.py` file can be run on anything for testing purposes this will start a server which can be accessed at the host's ip, port 5000. e.g. `192.168.0.1:5000`.
-The proper use however is to run the file on a Rasperry Pi, or possibly another device with GPIO pins.
-
+The proper use however is to run the file on a Rasperry Pi, or possibly another device with GPIO pins. It would be useful to have this run at startup (possibly as a Service) so that the user can access the interface and the lights without having to look at the pi's interface.
 
