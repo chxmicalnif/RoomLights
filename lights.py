@@ -7,6 +7,15 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route("/sliderVals",methods=['POST'])
+def sliderVals():
+    red = request.form["red"]
+    green = request.form["green"]
+    blue = request.form["blue"]
+    values = [red,green,blue]
+    print(values)
+    return values
+
 @app.route("/LEDON")
 def ledOn():
     pin17On()
@@ -26,6 +35,24 @@ def fourOn():
 def fourOff():
     pin17_18_20_21Off()
     return("Pins 17, 18 20, 21 Off")
+
+@app.route("/readFile")
+def rf():
+    l = readf("light.dat")
+    performFile(l)
+    return("File was read")
+
+@app.route("/WriteFile")
+def writeFile():
+    f = open("data/lightsFile.dat", "wt")
+    f.write("hello i'm a file.")
+    f.close()
+    return("File written")
+
+@app.route("/shuffle")
+def shufflelights():
+    threeVoltShuffle()
+    return("Lights shuffled")
 
 ### cleanExit not working as intended, file does not stop running
 

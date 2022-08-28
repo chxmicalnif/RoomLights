@@ -52,3 +52,36 @@ $(function() {
       return false;
     });
 });
+
+$(function() {
+  $('a#writeFile').on('click', function(e) {
+    e.preventDefault()
+      $.getJSON('/WriteFile',
+        function(data) {
+        // Do nothing
+        });
+      return false;
+    });
+});
+
+$(function() {
+  $('a#readFile').on('click', function(e) {
+    e.preventDefault()
+      $.getJSON('/readFile',
+        function(data) {
+        // Do nothing
+        });
+      return false;
+    });
+});
+
+$(function() {
+  $('a#shuffle').on('click', function(e) {
+    e.preventDefault()
+      $.getJSON('/shuffle',
+        function(data) {
+        // Do nothing
+        });
+      return false;
+    });
+});
